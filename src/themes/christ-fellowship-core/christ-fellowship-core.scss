@@ -1,0 +1,181 @@
+/* Vars go before the @import */
+/* Import the Bootstrap files */
+/******************************/
+// Grayscale Variables
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+// Color Variables
+$blue: #005c83;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #e73c3a;
+$orange: #f37b20;
+$yellow: #f9b816;
+$green: #8dc63f;
+$teal: #0096a0;
+$cyan: #00aeef;
+
+// Theme Color Variables
+$primary: $cyan;
+$secondary: $gray-600;
+$success: $green;
+$info: $orange;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-300;
+$dark: $gray-800;
+$body-bg: $gray-100;
+
+// Text Variables
+$font-family-sans-serif: "GothamHTF", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-sans-serif-secondary: "GothamCondensed", $font-family-sans-serif;
+$headings-font-weight: 600;
+$letter-spacing: .05em;
+$white: #fff;
+
+// Border Variables
+$border-width: 2px;
+$border-color: $gray-600;
+$border-radius: .4rem;
+$border-radius-lg: .6rem;
+$border-radius-sm: .2rem;
+
+// Navbar Variables
+$navbar-dark-color: rgba($white, .5);
+$navbar-light-color: rgba($black, .3);
+
+// Spacing
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3)
+), $spacers);
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+/* Custom CSS rules come here */
+body {
+    letter-spacing: $letter-spacing;
+}
+
+// Container Styles
+.container,
+.container-fluid {
+    margin-bottom: map-get($spacers, 5);
+
+    &:not(:first-of-type) {
+        margin-top: map-get($spacers, 5);
+    }
+}
+
+.container-fluid {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row {
+    &:not(:first-child) {
+        margin-top: map-get($spacers, 5);
+    }
+}
+
+[class*="col"] {
+    padding: map-get($spacers, 3);
+}
+
+// Element Styles
+hr {
+    width: 75%;
+}
+
+code {
+    padding: map-get($spacers, 1);
+    
+    border-radius: $border-radius;
+    border-color: $border-color;
+    border-width: $border-width;
+
+    background: $gray-100;
+}
+
+// Text Styles
+p,
+small,
+.font-family-secondary {
+    font-family: $font-family-sans-serif-secondary;
+}
+
+p {
+  font-size: larger;
+}
+
+// Navigation Styles
+.navbar .icon-bar,
+.navbar-dark .icon-bar {
+    background-color: $navbar-dark-color;
+}
+
+.navbar-light .icon-bar {
+    background-color: $navbar-light-color;
+}
+
+.navbar-toggler .icon-bar {
+    transform: rotate(0deg) translate(0px, 0px);
+    transition: ease all .2s;
+}
+
+.navbar-toggler .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+}
+
+.navbar-toggler .icon-bar+.icon-bar {
+    margin-top: 8px;
+}
+
+.navbar-toggler:not(.collapsed) .icon-bar:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px);
+    transition: ease all .2s;
+}
+
+.navbar-toggler:not(.collapsed) .icon-bar:nth-child(2) {
+    transform: rotate(-45deg) translate(3px, -3px);
+    transition: ease all .2s;
+}
+
+// Button Styles
+.btn {
+    text-transform: uppercase;
+    margin: map-get($spacers, 2);
+}
+
+// Card Styles
+.card {
+    .card-body {
+        .card-img {
+        	width: 75%;
+        }
+        
+        [class*="col"] {
+            padding: map-get($spacers, 1);
+        }
+    }
+}

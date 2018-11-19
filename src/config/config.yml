@@ -1,0 +1,7 @@
+# You can access those values (and any other values in your environment)
+# using the ${VARIABLE_NAME} syntax
+
+# This file should be checked into version control.
+
+API:
+  API_URL: https://my.api.com
